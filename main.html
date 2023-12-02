@@ -1,14 +1,103 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <title>Tela 2</title>
     <script async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-    <title>SistemaFisicaII</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <span class="resultado"></span>
+    <a class="buttons" id="voltarPaginaInicial" href="">Página Inicial</a>
+    <div class="containerPrincipalSistemas">
+        <span id="tituloPagina">Campo Elétrico (distribuição contínua de carga)</span>
+        <span id="subtituloPagina">Escolha um problema: </span>
+        <div class="problemas">
+            <div class="buttons" onclick="selecionarSistema(1)">Sistema 3.1</div>
+            <div class="buttons" onclick="selecionarSistema(2)">Sistema 3.2</div>
+            <div class="buttons" onclick="selecionarSistema(3)">Sistema 3.3</div>
+            <div class="buttons" onclick="selecionarSistema(4)">Sistema 3.4</div>
+        </div>
+        <!-- Sistema 1 -->
+        <div class="sistemas" id="sistema3_1">
+            <div class="sistemaInfo">
+                <span class="titulo">Sistema 3.1</span>
+                <img src="./imgs/sistema21.png" class="imagemSistema">
+            </div>
+            <div class="entradas">
+                <select id="selecionar_variavel_achar">
+                    <option value=null>Selecione o tipo de variável desejada</option>
+                    <option value="E">E - Campo Elétrico</option>
+                    <option value="Q">Q - Carga Elétrica</option>
+                    <option value="d">d - Distância</option>
+                </select>
+                <div class="campos_entrada" id="campos_entrada1">
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Sistema 2 -->
+        <div class="sistemas" id="sistema3_2">
+            <div class="sistemaInfo">
+                <span class="titulo">Sistema 3.2</span>
+                <img src="./imgs/sistema22.png" class="imagemSistema">
+            </div>
+            <div class="campos_entrada">
+                <span>\(d\) - Distância entre as cargas</span>
+                <input class="entradaNumeros" id="entrada_d_s3" name="entrada_d" type="number" start=0 />
+                <span>\(x\) - Distância entre a carga 1 até o ponto P</span>
+                <input class="entradaNumeros" id="entrada_x_s2" name="entrada_x" type="number" start=0 />
+                <span>\(Q_1\) - Carga elétrica</span>
+                <input class="entradaNumeros" id="entrada_q1_s2" name="entrada_q1" type="number" start=0 />
+                <span>\(Q_2\) - Carga elétrica</span>
+                <input class="entradaNumeros" id="entrada_q2_s2" name="entrada_q2" type="number" start=0 />
+                <div class="buttons" onclick="calcular2_2()">Calcular</div>
+            </div>
+        </div>
+        <!-- Sistema 3 -->
+        <div class="sistemas" id="sistema3_3">
+            <div class="sistemaInfo">
+                <span class="titulo">Sistema 3.3</span>
+                <img src="./imgs/sistema23.png" class="imagemSistema">
+            </div>
+            <div class="campos_entrada">
+                <span>\(a\) - Distância entre a carga 1 até o ponto P</span>
+                <input class="entradaNumeros" id="entrada_a_s3" name="entrada_a" type="number" start=0 />
+                <span>\(b\) - Distância entre a carga 2 até o ponto P</span>
+                <input class="entradaNumeros" id="entrada_b_s3" name="entrada_b" type="number" start=0 />
+                <span>\(c\) - Distância entre as cargas</span>
+                <input class="entradaNumeros" id="entrada_c_s3" name="entrada_c" type="number" start=0 />
+                <span>\(\alpha\) - Ângulo formado em P (Em °)</span>
+                <input class="entradaNumeros" id="entrada_alpha_s3" name="entrada_alpha" type="number" start=0 />
+                <span>\(Q_1\) - Carga elétrica</span>
+                <input class="entradaNumeros" id="entrada_q1_s3" name="entrada_q1" type="number" start=0 />
+                <span>\(Q_2\) - Carga elétrica</span>
+                <input class="entradaNumeros" id="entrada_q2_s3" name="entrada_q2" type="number" start=0 />
+                <div class="buttons" onclick="calcular2_3()">Calcular</div>
+            </div>
+        </div>
+        <!-- Sistema 4 -->
+        <div class="sistemas" id="sistema3_4">
+            <div class="sistemaInfo">
+                <span class="titulo">Sistema 3.4</span>
+                <img src="./imgs/sistema24.png" class="imagemSistema">
+            </div>
+            <div class="campos_entrada">
+                <span>\(d\) - Distância entre as cargas</span>
+                <input class="entradaNumeros" id="entrada_d_s4" name="entrada_d" type="number" start=0 />
+                <span>\(Q_1\) - Carga elétrica 1</span>
+                <input class="entradaNumeros" id="entrada_q1_s4" name="entrada_q1" type="number" start=0 />
+                <span>\(Q_2\) - Carga elétrica 2</span>
+                <input class="entradaNumeros" id="entrada_q2_s4" name="entrada_q2" type="number" start=0 />
+                <span>\(Q_3\) - Carga elétrica 3</span>
+                <input class="entradaNumeros" id="entrada_q3_s4" name="entrada_q3" type="number" start=0 />
+                <div class="buttons" onclick="calcular2_4()">Calcular</div>
+            </div>
+        </div>
+        <div class="resultados">
+            <span class="resultado_resumido"></span>
+            <span class="resultado_completo"></span>
+        </div>
+    </div>
+    <script src="script.js" ></script>
 </body>
-<script src="teste.js"></script>
 </html>
