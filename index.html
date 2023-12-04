@@ -15,7 +15,6 @@
             <div class="buttons" onclick="selecionarSistema(1)">Sistema 3.1</div>
             <div class="buttons" onclick="selecionarSistema(2)">Sistema 3.2</div>
             <div class="buttons" onclick="selecionarSistema(3)">Sistema 3.3</div>
-            <div class="buttons" onclick="selecionarSistema(4)">Sistema 3.4</div>
         </div>
         <!-- Sistema 1 -->
         <div class="sistemas" id="sistema3_1">
@@ -24,12 +23,28 @@
                 <img src="./imgs/sistema21.png" class="imagemSistema">
             </div>
             <div class="entradas">
-                <select id="selecionar_variavel_achar">
+                <select class="selecionar_variavel_achar" id="choose3.1">
                     <option value=null>Selecione o tipo de variável desejada</option>
                     <option value="L">&#955 - Densidade de carga linear</option>
                     <option value="Q">Q - Carga total do anel</option>
                 </select>
                 <div class="campos_entrada" id="campos_entrada1">
+                </div>
+            </div>
+        </div>
+        <!-- Sistema 2 -->
+        <div class="sistemas" id="sistema3_2">
+            <div class="sistemaInfo">
+                <span class="titulo">Sistema 3.2</span>
+                <img src="./imgs/sistema21.png" class="imagemSistema">
+            </div>
+            <div class="entradas">
+                <select class="selecionar_variavel_achar" id="choose3.2">
+                    <option value=null>Selecione o tipo de variável desejada</option>
+                    <option value="S">&#963 - Densidade de carga linear</option>
+                    <option value="Q">Q - Carga total do anel</option>
+                </select>
+                <div class="campos_entrada" id="campos_entrada2">
                 </div>
             </div>
         </div>
@@ -41,5 +56,7 @@
     <script src="script.js" ></script>
     <script src="conversor.js" ></script>
     <script src="Scripts/3.1.js"></script>
+    <script src="Scripts/3.2.js"></script>
+    <script src="Scripts/3.3.js"></script>
 </body>
 </html>

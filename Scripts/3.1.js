@@ -1,11 +1,11 @@
-const form = document.getElementById("electricFieldForm");
-const select = document.getElementById("selecionar_variavel_achar");
+const select31 = document.getElementById("choose3.1");
 const resultadoResumido = document.querySelector(".resultado_resumido");
 const resultadoCompleto = document.querySelector(".resultado_completo");
+const quadro31 = document.getElementById("campos_entrada1");
 
-select.addEventListener("change", (event) => {
-    if (select.value == "Q") {
-        document.querySelector("#campos_entrada1").innerHTML = `
+select31.addEventListener("change", (event) => {
+    if (select31.value == "Q") {
+        quadro31.innerHTML = `
         <span>R - Raio do anel</span>
         <input class="entradaNumeros" type="number" id="R31" step="0.01" required>
         <span>Z - Posição no Eixo Z</span>
@@ -14,8 +14,8 @@ select.addEventListener("change", (event) => {
         <input class="entradaNumeros" type="number" id="X31" step="0.01" required>
         <div class="buttons" onclick="calcular3_1()">Calcular</div>
         `
-    } else if(select.value == "L"){
-        document.querySelector("#campos_entrada1").innerHTML = `
+    } else if(select31.value == "L"){
+        quadro31.innerHTML = `
         <span>R - Raio do anel</span>
         <input class="entradaNumeros" type="number" id="R31" step="0.01" required>
         <span>Z - Posição no Eixo Z</span>
@@ -26,7 +26,7 @@ select.addEventListener("change", (event) => {
         `
     }
     else {
-        document.querySelector("#campos_entrada1").innerHTML = ``
+        quadro31.innerHTML = ``
     }
 
     event.preventDefault()
@@ -61,7 +61,7 @@ function insertMathJax(R, Z, X) {
     // \\approx => Aproximado
     // \\, => Espaço
     
-    if (select.value == "Q") {
+    if (select31.value == "Q") {
         E = eq1_1 / (4 * e * Math.PI * eq2_1);
         [E, notation] = transformToScientificNotation(E);
 

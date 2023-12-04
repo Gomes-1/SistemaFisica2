@@ -6,22 +6,14 @@ function selecionarSistema(selecao) {
         document.querySelector("#sistema3_1").style.display = "flex"
         document.querySelector("#sistema3_2").style.display = "none"
         document.querySelector("#sistema3_3").style.display = "none"
-        document.querySelector("#sistema3_4").style.display = "none"
     } else if (selecao == 2) {
         document.querySelector("#sistema3_1").style.display = "none"
         document.querySelector("#sistema3_2").style.display = "flex"
         document.querySelector("#sistema3_3").style.display = "none"
-        document.querySelector("#sistema3_4").style.display = "none"
-    } else if (selecao == 3) {
+    } else {
         document.querySelector("#sistema3_1").style.display = "none"
         document.querySelector("#sistema3_2").style.display = "none"
         document.querySelector("#sistema3_3").style.display = "flex"
-        document.querySelector("#sistema3_4").style.display = "none"
-    } else if (selecao == 4) {
-        document.querySelector("#sistema3_1").style.display = "none"
-        document.querySelector("#sistema3_2").style.display = "none"
-        document.querySelector("#sistema3_3").style.display = "none"
-        document.querySelector("#sistema3_4").style.display = "flex"
     }
 }
 

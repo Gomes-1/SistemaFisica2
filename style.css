@@ -99,7 +99,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* Selects */
-#selecionar_variavel_achar {
+.selecionar_variavel_achar {
     width: 300px;
     height: 59px;
     border-radius: 7px;
