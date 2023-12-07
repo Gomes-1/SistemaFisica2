@@ -28,12 +28,17 @@ body {
 }
 
 
-#tituloPagina {
-    font-size: 3em;
+.tituloPagina {
+    font-size: 2em;
+    padding-left: 5em;
+    padding-right: 5em;
 }
-#subtituloPagina {
+
+.subtituloPagina {
     font-size: 1.5em;
     margin-bottom: 15px;
+    padding-left: 5em;
+    padding-right: 5em;
 }
 
 .problemas {
@@ -83,6 +88,17 @@ body {
     display: none;
 }
 
+.tipoInput {
+    width: auto;
+    border-radius: 7px;
+    padding: 5px;
+    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: 'Quantico', sans-serif;
+    text-align: center;
+}
 
 /* Scroll */
 body::-webkit-scrollbar {

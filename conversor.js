@@ -1,4 +1,5 @@
 function conversorCoulomb(from, to, value) {
+    convertedValue = 0;
     if (from === 'C' && to === 'mC') { convertedValue = parseFloat(value) * (Math.pow(10, (-3))); }
     if (from === 'C' && to === 'µC') { convertedValue = parseFloat(value) * (Math.pow(10, (-6))); }
     if (from === 'C' && to === 'nC') { convertedValue = parseFloat(value) * (Math.pow(10, (-9))); }

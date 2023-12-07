@@ -6,22 +6,40 @@ const quadro31 = document.getElementById("campos_entrada1");
 select31.addEventListener("change", (event) => {
     if (select31.value == "Q") {
         quadro31.innerHTML = `
-        <span>R - Raio do anel</span>
+        <span>R - Raio do anel (m)</span>
         <input class="entradaNumeros" type="number" id="R31" step="0.01" required>
-        <span>Z - Posição no Eixo Z</span>
+        <span>Z - Posição no Eixo Z (m)</span>
         <input class="entradaNumeros" type="number" id="Z31" step="0.01" required>
         <span>Q - Carga total do anel</span>
-        <input class="entradaNumeros" type="number" id="X31" step="0.01" required>
+        <div class="entradasContainer">
+            <input class="entradaNumeros" type="number" id="X31" step="0.01" required>
+            <select class="tipoInput" id="tipo_entrada_31">
+                <option value="C">C</option>
+                <option value="mC">mC</option>
+                <option value="µC">µC</option>
+                <option value="nC">nC</option>
+                <option value="pC">pC</option>
+            </select>
+        </div>
         <div class="buttons" onclick="calcular3_1()">Calcular</div>
         `
     } else if(select31.value == "L"){
         quadro31.innerHTML = `
-        <span>R - Raio do anel</span>
+        <span>R - Raio do anel (m)</span>
         <input class="entradaNumeros" type="number" id="R31" step="0.01" required>
-        <span>Z - Posição no Eixo Z</span>
+        <span>Z - Posição no Eixo Z (m)</span>
         <input class="entradaNumeros" type="number" id="Z31" step="0.01" required>
         <span>&#955 - Densidade de carga linear</span>
-        <input class="entradaNumeros" type="number" id="X31" step="0.01" required>
+        <div class="entradasContainer">
+            <input class="entradaNumeros" type="number" id="X31" step="0.01" required>
+            <select class="tipoInput" id="tipo_entrada_31">
+                <option value="C">C</option>
+                <option value="mC">mC</option>
+                <option value="µC">µC</option>
+                <option value="nC">nC</option>
+                <option value="pC">pC</option>
+            </select>
+        </div>
         <div class="buttons" onclick="calcular3_1()">Calcular</div>
         `
     }
@@ -37,7 +55,7 @@ function calcular3_1(){
     resultadoResumido.innerHTML = "";
     let R = parseFloat(document.getElementById("R31").value);
     let Z = parseFloat(document.getElementById("Z31").value);
-    let X = parseFloat(document.getElementById("X31").value);
+    let X = document.querySelector("#tipo_entrada_31").value == 'C' ? parseFloat(document.getElementById("X31").value) : conversorCoulomb(document.querySelector("#tipo_entrada_31").value, 'C', document.getElementById("X31").value)
 
     R = Math.abs(R);
     Z = Math.abs(Z);

@@ -26,5 +26,11 @@ function converterParaNotacao10x(numero) {
 }
 
 function mostrarCalculos() {
-    document.querySelector(".resultado_completo").style.display = "block"
+    if (document.querySelector(".resultado_completo").style.display == "none") {
+        document.querySelector(".resultado_completo").style.display = "block"
+        document.querySelector("#mostrarButton").innerHTML = 'Ocultar Cálculos'
+    } else {
+        document.querySelector(".resultado_completo").style.display = "none"
+        document.querySelector("#mostrarButton").innerHTML = 'Mostrar Cálculos'
+    }
 }
