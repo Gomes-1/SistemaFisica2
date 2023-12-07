@@ -5,6 +5,8 @@ const quadro31 = document.getElementById("campos_entrada1");
 
 select31.addEventListener("change", (event) => {
     if (select31.value == "Q") {
+        resultadoCompleto.innerHTML = '';
+        resultadoResumido.innerHTML = '';
         quadro31.innerHTML = `
         <span>R - Raio do anel (m)</span>
         <input class="entradaNumeros" type="number" id="R31" step="0.01" required>
@@ -24,6 +26,8 @@ select31.addEventListener("change", (event) => {
         <div class="buttons" onclick="calcular3_1()">Calcular</div>
         `
     } else if(select31.value == "L"){
+        resultadoCompleto.innerHTML = '';
+        resultadoResumido.innerHTML = '';
         quadro31.innerHTML = `
         <span>R - Raio do anel (m)</span>
         <input class="entradaNumeros" type="number" id="R31" step="0.01" required>

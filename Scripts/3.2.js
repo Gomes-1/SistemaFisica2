@@ -3,6 +3,8 @@ const quadro32 = document.getElementById("campos_entrada2");
 
 select32.addEventListener("change", (event) => {
     if (select32.value == "Q") {
+        resultadoCompleto.innerHTML = '';
+        resultadoResumido.innerHTML = '';
         quadro32.innerHTML = `
             <span>R - Raio do disco (m)</span>
             <input class="entradaNumeros" type="number" id="R32" step="0.01" required>
@@ -22,6 +24,8 @@ select32.addEventListener("change", (event) => {
             <div class="buttons" onclick="calcular3_2()">Calcular</div>
         `;
     } else if (select32.value == "S") {
+        resultadoCompleto.innerHTML = '';
+        resultadoResumido.innerHTML = '';
         quadro32.innerHTML = `
             <span>R - Raio do disco (m)</span>
             <input class="entradaNumeros" type="number" id="R32" step="0.01" required>
