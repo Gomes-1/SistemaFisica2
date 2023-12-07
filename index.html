@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a class="buttons" id="voltarPaginaInicial" href="">Página Inicial</a>
-    <div class="containerPrincipalSistemas">
+    <main>
+        <a class="buttons" id="voltarPaginaInicial" href="">Página Inicial</a>
+        <div class="containerPrincipalSistemas">
         <span class="tituloPagina">Campo Elétrico</span>
         <span class="subtituloPagina"> (distribuição contínua de carga)</span>
         <span class="subtituloPagina">Escolha um problema: </span>
@@ -21,7 +22,8 @@
         <div class="sistemas" id="sistema3_1">
             <div class="sistemaInfo">
                 <span class="titulo">Sistema 3.1</span>
-                <img src="./imgs/sistema21.png" class="imagemSistema">
+                <img src="./imgs/sistema31.png" class="imagemSistema">
+                <p class="textos">Este é um sistema para calcular o campo elétrico com distribuição contínua de carga sobre um anel carregado.</p>
             </div>
             <div class="entradas">
                 <select class="selecionar_variavel_achar" id="choose3.1">
@@ -69,7 +71,19 @@
             <span class="resultado_resumido"></span>
             <span class="resultado_completo"></span>
         </div>
+        <span class="aulas">
+            <span class="subtituloPagina">Aula explicativa</span>
+            <div id="aulasVideo"></div>
+            <br>
+        </span>
     </div>
+    </main>
+    <footer>
+        <span class="subtituloPagina">Demonstração das fórmulas</span>
+        <div class="buttons" onclick="mostrarPDF()" id="pdfButton">Mostrar</div>
+        <embed id="pdf" style="display: none; padding: 10px;"src="./demonstracao.pdf" width="530" height="700" 
+    type="application/pdf">
+    </footer>
     <script src="script.js" ></script>
     <script src="conversor.js" ></script>
     <script src="Scripts/3.1.js"></script>

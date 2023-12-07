@@ -11,6 +11,17 @@ body {
     overflow-x: hidden;
 }
 
+main{
+    margin: auto;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: flex-end;
+}
+
 #voltarPaginaInicial {
     position: absolute;
     top: 0; left: 0;
@@ -147,13 +158,23 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: 20px;
 }
 
+.textos{
+    width: 15rem;
+}
+
 .titulo {
     font-size: 1.5em;
     margin: 10px;
 }
 
 .imagemSistema {
-    width: 25vw;
+    width: 10vw;
     border: 2px dashed #8E12DF;
     border-radius: 10px;
+}
+
+.aulas{
+    display: none;
+    flex-direction: column;
+    align-items: center;
 }
