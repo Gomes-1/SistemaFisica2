@@ -25,7 +25,16 @@ select33.addEventListener("change", () => {
             </select>
         </div>
         <span>&#955 - Densidade de carga linear</span>
-        <input class="entradaNumeros" type="number" id="Lam33" step="0.01" required>
+        <div class="entradasContainer">
+                <input class="entradaNumeros" type="number" id="Lam33" step="0.01" required>
+                <select class="tipoInput" id="tipo_entrada_33Lam">
+                    <option value="C">C</option>
+                    <option value="mC">mC</option>
+                    <option value="µC">µC</option>
+                    <option value="nC">nC</option>
+                    <option value="pC">pC</option>
+                </select>
+            </div>
         <div class="buttons" onclick="calcular3_3()">Calcular</div>
         `
 
@@ -43,7 +52,16 @@ select33.addEventListener("change", () => {
             </select>
         </div>
         <span>&#955 - Densidade de carga linear</span>
-        <input class="entradaNumeros" type="number" id="Lam33" step="0.01" required>
+        <div class="entradasContainer">
+                <input class="entradaNumeros" type="number" id="Lam33" step="0.01" required>
+                <select class="tipoInput" id="tipo_entrada_33Lam">
+                    <option value="C">C</option>
+                    <option value="mC">mC</option>
+                    <option value="µC">µC</option>
+                    <option value="nC">nC</option>
+                    <option value="pC">pC</option>
+                </select>
+            </div>
         <div class="buttons" onclick="calcular3_3()">Calcular</div>
         `
     }
@@ -64,7 +82,7 @@ function calcular3_3(){
 }
 
 function calcularEF() {
-  const lambda = parseFloat(document.getElementById('Lam33').value);
+  const lambda = document.querySelector("#tipo_entrada_33Lam").value == 'C' ? parseFloat(document.getElementById("Lam33").value) : conversorCoulomb(document.querySelector("#tipo_entrada_33Lam").value, 'C', document.getElementById("Lam33").value);
   const y = document.querySelector("#tipo_entrada_33Y").value == 'm' ? parseFloat(document.getElementById("Y33").value) : conversorDistancia(document.querySelector("#tipo_entrada_33Y").value, 'm', document.getElementById("Y33").value);
   const L = document.querySelector("#tipo_entrada_33L").value == 'm' ? parseFloat(document.getElementById("L33").value) : conversorDistancia(document.querySelector("#tipo_entrada_33L").value, 'm', document.getElementById("L33").value);
   const epsilon = 8.85 * Math.pow(10, -12);
@@ -90,7 +108,7 @@ function calcularEF() {
 
 
 function calcularEI(){
-  const lambda = parseFloat(document.getElementById('Lam33').value);
+  const lambda = document.querySelector("#tipo_entrada_33Lam").value == 'C' ? parseFloat(document.getElementById("Lam33").value) : conversorCoulomb(document.querySelector("#tipo_entrada_33Lam").value, 'C', document.getElementById("Lam33").value);
   const y = document.querySelector("#tipo_entrada_33Y").value == 'm' ? parseFloat(document.getElementById("Y33").value) : conversorDistancia(document.querySelector("#tipo_entrada_33Y").value, 'm', document.getElementById("Y33").value);
   const epsilon = 8.85 * Math.pow(10, -12);
   const k = calcularK(epsilon);
