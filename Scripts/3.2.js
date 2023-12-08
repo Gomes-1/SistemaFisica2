@@ -6,10 +6,24 @@ select32.addEventListener("change", (event) => {
         resultadoCompleto.innerHTML = '';
         resultadoResumido.innerHTML = '';
         quadro32.innerHTML = `
-            <span>R - Raio do disco (m)</span>
+            <span>R - Raio do disco</span>
+            <div class="entradasContainer">
             <input class="entradaNumeros" type="number" id="R32" step="0.01" required>
-            <span>Z - Posição no Eixo Z (m)</span>
+                <select class="tipoInput" id="tipo_entrada_32R">
+                    <option value="m">m</option>
+                    <option value="cm">cm</option>
+                    <option value="mm">mm</option>
+                </select>
+            </div>
+            <span>Z - Posição no Eixo Z</span>
+            <div class="entradasContainer">
             <input class="entradaNumeros" type="number" id="Z32" step="0.01" required>
+                <select class="tipoInput" id="tipo_entrada_32Z">
+                    <option value="m">m</option>
+                    <option value="cm">cm</option>
+                    <option value="mm">mm</option>
+                </select>
+            </div>
             <span>Q - Carga total do disco</span>
             <div class="entradasContainer">
                 <input class="entradaNumeros" type="number" id="X32" step="0.01" required>
@@ -27,10 +41,24 @@ select32.addEventListener("change", (event) => {
         resultadoCompleto.innerHTML = '';
         resultadoResumido.innerHTML = '';
         quadro32.innerHTML = `
-            <span>R - Raio do disco (m)</span>
+            <span>R - Raio do disco</span>
+            <div class="entradasContainer">
             <input class="entradaNumeros" type="number" id="R32" step="0.01" required>
-            <span>Z - Posição no Eixo Z (m)</span>
+                <select class="tipoInput" id="tipo_entrada_32R">
+                    <option value="m">m</option>
+                    <option value="cm">cm</option>
+                    <option value="mm">mm</option>
+                </select>
+            </div>
+            <span>Z - Posição no Eixo Z</span>
+            <div class="entradasContainer">
             <input class="entradaNumeros" type="number" id="Z32" step="0.01" required>
+                <select class="tipoInput" id="tipo_entrada_32Z">
+                    <option value="m">m</option>
+                    <option value="cm">cm</option>
+                    <option value="mm">mm</option>
+                </select>
+            </div>
             <span>&#963 - Densidade de carga linear</span>
             <div class="entradasContainer">
                 <input class="entradaNumeros" type="number" id="X32" step="0.01" required>
@@ -54,8 +82,8 @@ select32.addEventListener("change", (event) => {
 function calcular3_2() {
     resultadoCompleto.innerHTML = "";
     resultadoResumido.innerHTML = "";
-    let R = parseFloat(document.getElementById("R32").value);
-    let Z = parseFloat(document.getElementById("Z32").value);
+    let R = document.querySelector("#tipo_entrada_32R").value == 'm' ? parseFloat(document.getElementById("R32").value) : conversorDistancia(document.querySelector("#tipo_entrada_32R").value, 'm', document.getElementById("R32").value);
+    let Z = document.querySelector("#tipo_entrada_32Z").value == 'm' ? parseFloat(document.getElementById("Z32").value) : conversorDistancia(document.querySelector("#tipo_entrada_32Z").value, 'm', document.getElementById("Z32").value);
     let X = document.querySelector("#tipo_entrada_32").value == 'C' ? parseFloat(document.getElementById("X32").value) : conversorCoulomb(document.querySelector("#tipo_entrada_32").value, 'C', document.getElementById("X32").value);
 
     R = Math.abs(R);

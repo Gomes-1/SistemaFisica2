@@ -145,6 +145,10 @@ body::-webkit-scrollbar-thumb {
     text-align: center;
 }
 
+.entradas{
+    padding-top: 20px;
+}
+
 input[type="number"]::-webkit-inner-spin-button {
     display: none;
 }
@@ -168,7 +172,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .imagemSistema {
-    width: 10vw;
+    width: 20vw;
     border: 2px dashed #8E12DF;
     border-radius: 10px;
 }

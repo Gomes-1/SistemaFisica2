@@ -8,10 +8,24 @@ select31.addEventListener("change", (event) => {
         resultadoCompleto.innerHTML = '';
         resultadoResumido.innerHTML = '';
         quadro31.innerHTML = `
-        <span>R - Raio do anel (m)</span>
-        <input class="entradaNumeros" type="number" id="R31" step="0.01" required>
-        <span>Z - Posição no Eixo Z (m)</span>
-        <input class="entradaNumeros" type="number" id="Z31" step="0.01" required>
+        <span>R - Raio do anel</span>
+        <div class="entradasContainer">
+            <input class="entradaNumeros" type="number" id="R31" step="0.01" required>
+            <select class="tipoInput" id="tipo_entrada_31R">
+                <option value="m">m</option>
+                <option value="cm">cm</option>
+                <option value="mm">mm</option>
+            </select>
+        </div>
+        <span>Z - Posição no Eixo Z</span>
+        <div class="entradasContainer">
+            <input class="entradaNumeros" type="number" id="Z31" step="0.01" required>
+            <select class="tipoInput" id="tipo_entrada_31Z">
+                <option value="m">m</option>
+                <option value="cm">cm</option>
+                <option value="mm">mm</option>
+            </select>
+        </div>
         <span>Q - Carga total do anel</span>
         <div class="entradasContainer">
             <input class="entradaNumeros" type="number" id="X31" step="0.01" required>
@@ -29,10 +43,24 @@ select31.addEventListener("change", (event) => {
         resultadoCompleto.innerHTML = '';
         resultadoResumido.innerHTML = '';
         quadro31.innerHTML = `
-        <span>R - Raio do anel (m)</span>
-        <input class="entradaNumeros" type="number" id="R31" step="0.01" required>
-        <span>Z - Posição no Eixo Z (m)</span>
-        <input class="entradaNumeros" type="number" id="Z31" step="0.01" required>
+        <span>R - Raio do anel</span>
+        <div class="entradasContainer">
+            <input class="entradaNumeros" type="number" id="R31" step="0.01" required>
+            <select class="tipoInput" id="tipo_entrada_31R">
+                <option value="m">m</option>
+                <option value="cm">cm</option>
+                <option value="mm">mm</option>
+            </select>
+        </div>
+        <span>Z - Posição no Eixo Z</span>
+        <div class="entradasContainer">
+            <input class="entradaNumeros" type="number" id="Z31" step="0.01" required>
+            <select class="tipoInput" id="tipo_entrada_31Z">
+                <option value="m">m</option>
+                <option value="cm">cm</option>
+                <option value="mm">mm</option>
+            </select>
+        </div>
         <span>&#955 - Densidade de carga linear</span>
         <div class="entradasContainer">
             <input class="entradaNumeros" type="number" id="X31" step="0.01" required>
@@ -57,8 +85,8 @@ select31.addEventListener("change", (event) => {
 function calcular3_1(){
     resultadoCompleto.innerHTML = "";
     resultadoResumido.innerHTML = "";
-    let R = parseFloat(document.getElementById("R31").value);
-    let Z = parseFloat(document.getElementById("Z31").value);
+    let R = document.querySelector("#tipo_entrada_31R").value == 'm' ? parseFloat(document.getElementById("R31").value) : conversorDistancia(document.querySelector("#tipo_entrada_31R").value, 'm', document.getElementById("R31").value);
+    let Z = document.querySelector("#tipo_entrada_31Z").value == 'm' ? parseFloat(document.getElementById("Z31").value) : conversorDistancia(document.querySelector("#tipo_entrada_31Z").value, 'm', document.getElementById("Z31").value);
     let X = document.querySelector("#tipo_entrada_31").value == 'C' ? parseFloat(document.getElementById("X31").value) : conversorCoulomb(document.querySelector("#tipo_entrada_31").value, 'C', document.getElementById("X31").value)
 
     R = Math.abs(R);
