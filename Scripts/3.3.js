@@ -82,24 +82,24 @@ function calcular3_3(){
 }
 
 function calcularEF() {
-  const lambda = document.querySelector("#tipo_entrada_33Lam").value == 'C' ? parseFloat(document.getElementById("Lam33").value) : conversorCoulomb(document.querySelector("#tipo_entrada_33Lam").value, 'C', document.getElementById("Lam33").value);
-  const y = document.querySelector("#tipo_entrada_33Y").value == 'm' ? parseFloat(document.getElementById("Y33").value) : conversorDistancia(document.querySelector("#tipo_entrada_33Y").value, 'm', document.getElementById("Y33").value);
-  const L = document.querySelector("#tipo_entrada_33L").value == 'm' ? parseFloat(document.getElementById("L33").value) : conversorDistancia(document.querySelector("#tipo_entrada_33L").value, 'm', document.getElementById("L33").value);
+  const lambda = Math.abs(document.querySelector("#tipo_entrada_33Lam").value == 'C' ? parseFloat(document.getElementById("Lam33").value) : conversorCoulomb(document.querySelector("#tipo_entrada_33Lam").value, 'C', document.getElementById("Lam33").value));
+  const y = Math.abs(document.querySelector("#tipo_entrada_33Y").value == 'm' ? parseFloat(document.getElementById("Y33").value) : conversorDistancia(document.querySelector("#tipo_entrada_33Y").value, 'm', document.getElementById("Y33").value));
+  const L = Math.abs(document.querySelector("#tipo_entrada_33L").value == 'm' ? parseFloat(document.getElementById("L33").value) : conversorDistancia(document.querySelector("#tipo_entrada_33L").value, 'm', document.getElementById("L33").value));
   const epsilon = 8.85 * Math.pow(10, -12);
   const k = calcularK(epsilon);
 
-  const parte5 = '\\[E = \\frac{2 \\cdot k \\cdot \\lambda}{y} \\cdot \\frac{L}{\\sqrt{4y^2 + L^2}}\\]';
+  const parte5 = '\\[|E| = \\frac{2 \\cdot k \\cdot \\lambda}{y} \\cdot \\frac{L}{\\sqrt{4y^2 + L^2}}\\]';
 
   // Parte 3 da fórmula
   const E = (2 * k * lambda / y) * (L / Math.sqrt(4 * y * 2 + L * 2));
-  const parte3 = `\\[E = \\frac{2 \\cdot ${k.toFixed(5)} \\cdot ${lambda}}{${y}} \\cdot \\frac{${L}}{\\sqrt{4 \\cdot ${y}^2 + ${L}^2}} = ${converterParaNotacao10x(E)} \\, \\text{V/m}\\]`;
+  const parte3 = `\\[|E| = \\frac{2 \\cdot ${k.toFixed(5)} \\cdot ${lambda}}{${y}} \\cdot \\frac{${L}}{\\sqrt{4 \\cdot ${y}^2 + ${L}^2}} = ${converterParaNotacao10x(E)} \\, \\text{V/m}\\]`;
 
 
 
   // Atualiza a fórmula na variável 'formula'
   const formula = `Informações Formulas: ${parte5}Resultado Barra Finita: ${parte3}`;
 
-  resultadoResumido.innerHTML = `\\[E = ${converterParaNotacao10x(E)} \\, \\text{V/m}\\]`;
+  resultadoResumido.innerHTML = `\\[|E| = ${converterParaNotacao10x(E)} \\, \\text{V/m}\\]`;
   resultadoResumido.innerHTML += `<div id="mostrarButton" class="buttons" onclick="mostrarCalculos()">Mostrar Cálculos</div>`;
   resultadoCompleto.innerHTML = formula;
   MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
@@ -108,22 +108,22 @@ function calcularEF() {
 
 
 function calcularEI(){
-  const lambda = document.querySelector("#tipo_entrada_33Lam").value == 'C' ? parseFloat(document.getElementById("Lam33").value) : conversorCoulomb(document.querySelector("#tipo_entrada_33Lam").value, 'C', document.getElementById("Lam33").value);
-  const y = document.querySelector("#tipo_entrada_33Y").value == 'm' ? parseFloat(document.getElementById("Y33").value) : conversorDistancia(document.querySelector("#tipo_entrada_33Y").value, 'm', document.getElementById("Y33").value);
+  const lambda = Math.abs(document.querySelector("#tipo_entrada_33Lam").value == 'C' ? parseFloat(document.getElementById("Lam33").value) : conversorCoulomb(document.querySelector("#tipo_entrada_33Lam").value, 'C', document.getElementById("Lam33").value));
+  const y = Math.abs(document.querySelector("#tipo_entrada_33Y").value == 'm' ? parseFloat(document.getElementById("Y33").value) : conversorDistancia(document.querySelector("#tipo_entrada_33Y").value, 'm', document.getElementById("Y33").value));
   const epsilon = 8.85 * Math.pow(10, -12);
   const k = calcularK(epsilon);
 
   // Parte 1 da fórmula
-  const parte1 = `\\[E = \\frac{2 \\cdot k \\cdot \\lambda}{y}\\]`;
+  const parte1 = `\\[|E| = \\frac{2 \\cdot k \\cdot \\lambda}{y}\\]`;
 
   // Parte 4 da fórmula
   const resultadoParte4 = (2 * k * lambda / y);
-  const parte4 = `\\[E = \\frac{2 \\cdot ${k.toFixed(5)} \\cdot ${lambda}}{${y}} = ${converterParaNotacao10x(resultadoParte4)} \\, \\text{V/m}\\]`;
+  const parte4 = `\\[|E| = \\frac{2 \\cdot ${k.toFixed(5)} \\cdot ${lambda}}{${y}} = ${converterParaNotacao10x(resultadoParte4)} \\, \\text{V/m}\\]`;
 
   // Atualiza a fórmula na variável 'formula'
   const formula = `Informações Formulas:${parte1}Resultado Barra Infinita: ${parte4}`;
 
-  resultadoResumido.innerHTML = `\\[E = ${converterParaNotacao10x(resultadoParte4)} \\, \\text{V/m}\\]`;
+  resultadoResumido.innerHTML = `\\[|E| = ${converterParaNotacao10x(resultadoParte4)} \\, \\text{V/m}\\]`;
   resultadoResumido.innerHTML += `<div id="mostrarButton" class="buttons" onclick="mostrarCalculos()">Mostrar Cálculos</div>`;
   resultadoCompleto.innerHTML = formula;
   MathJax.Hub.Queue(["Typeset", MathJax.Hub]);

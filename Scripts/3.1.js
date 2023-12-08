@@ -116,12 +116,12 @@ function insertMathJax(R, Z, X) {
         [E, notation] = transformToScientificNotation(E);
 
 
-        resultadoCompleto.innerHTML += `$$ \\vec E = \\frac{1}{4 \\cdot \\pi \\cdot \\epsilon 0} \\cdot \\frac{Q \\cdot Z}{(Z^2 + R^2)^\\frac{3}{2}} $$`;
-        resultadoCompleto.innerHTML += `$$ \\vec E = \\frac{1}{4 \\cdot \\pi \\cdot \\epsilon 0} \\cdot \\frac{${X} \\cdot ${Z}}{(${Z}^2 + ${R}^2)^\\frac{3}{2}} $$`;
-        resultadoCompleto.innerHTML += `$$ \\vec E = \\frac{1}{4 \\cdot \\pi \\cdot \\epsilon 0} \\cdot \\frac{${eq1_1}}{(${eq1_2})^\\frac{3}{2}} $$`;
-        resultadoCompleto.innerHTML += `$$ \\vec E \\approx \\frac{${eq1_1}}{4 \\cdot \\pi \\cdot \\epsilon \\cdot ${round(eq2_1, 3)}} $$`;
-        resultadoCompleto.innerHTML += `$$ \\vec E \\approx ${round(E, 3)} ${notation} \\, \\left.\\mathrm{N}\\middle/\\mathrm{C}\\right. $$`;
-        resultadoResumido.innerHTML += `$$ \\vec E \\approx ${round(E, 3)} ${notation} \\, \\left.\\mathrm{N}\\middle/\\mathrm{C}\\right. $$`;
+        resultadoCompleto.innerHTML += `$$ |E| = \\frac{1}{4 \\cdot \\pi \\cdot \\epsilon 0} \\cdot \\frac{Q \\cdot Z}{(Z^2 + R^2)^\\frac{3}{2}} $$`;
+        resultadoCompleto.innerHTML += `$$ |E| = \\frac{1}{4 \\cdot \\pi \\cdot \\epsilon 0} \\cdot \\frac{${X} \\cdot ${Z}}{(${Z}^2 + ${R}^2)^\\frac{3}{2}} $$`;
+        resultadoCompleto.innerHTML += `$$ |E| = \\frac{1}{4 \\cdot \\pi \\cdot \\epsilon 0} \\cdot \\frac{${eq1_1}}{(${eq1_2})^\\frac{3}{2}} $$`;
+        resultadoCompleto.innerHTML += `$$ |E| \\approx \\frac{${eq1_1}}{4 \\cdot \\pi \\cdot \\epsilon \\cdot ${round(eq2_1, 3)}} $$`;
+        resultadoCompleto.innerHTML += `$$ |E| \\approx ${round(E, 3)} ${notation} \\, \\left.\\mathrm{N}\\middle/\\mathrm{C}\\right. $$`;
+        resultadoResumido.innerHTML += `$$ |E| \\approx ${round(E, 3)} ${notation} \\, \\left.\\mathrm{N}\\middle/\\mathrm{C}\\right. $$`;
         resultadoResumido.innerHTML += `<div id="mostrarButton" class="buttons" onclick="mostrarCalculos()">Mostrar Cálculos</div>`
         MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         return;
@@ -136,12 +136,12 @@ function insertMathJax(R, Z, X) {
     [E, notation] = transformToScientificNotation(E);
 
 
-    resultadoCompleto.innerHTML += `$$ \\vec E = \\frac{1}{4 \\cdot \\pi \\cdot \\epsilon 0} \\cdot \\frac{Z \\cdot \\lambda }{(Z^2 + R^2)^\\frac{3}{2}} \\cdot 2 \\cdot \\pi \\cdot R $$`;
-    resultadoCompleto.innerHTML += `$$ \\vec E = \\frac{1}{4 \\cdot \\pi \\cdot \\epsilon 0} \\cdot \\frac{${Z} \\cdot ${X}}{(${Z}^2 + ${R}^2)^\\frac{3}{2}} \\cdot 2 \\cdot \\pi \\cdot ${R} $$`;
-    resultadoCompleto.innerHTML += `$$ \\vec E = \\frac{1}{4 \\cdot \\pi \\cdot \\epsilon 0} \\cdot \\frac{${eq1_1}}{(${eq1_2})^\\frac{3}{2}} \\cdot ${eq1_3} \\cdot \\pi $$`;
-    resultadoCompleto.innerHTML += `$$ \\vec E \\approx \\frac{${eq2_2} \\cdot \\pi}{${round(eq2_3, 3)} \\cdot \\pi \\cdot \\epsilon 0} $$`;
-    resultadoCompleto.innerHTML += `$$ \\vec E \\approx ${round(E, 3)} ${notation} \\, \\left.\\mathrm{N}\\middle/\\mathrm{C}\\right. $$`;
-    resultadoResumido.innerHTML += `$$ \\vec E \\approx ${round(E, 3)} ${notation} \\, \\left.\\mathrm{N}\\middle/\\mathrm{C}\\right. $$`;
+    resultadoCompleto.innerHTML += `$$ |E| = \\frac{1}{4 \\cdot \\pi \\cdot \\epsilon 0} \\cdot \\frac{Z \\cdot \\lambda }{(Z^2 + R^2)^\\frac{3}{2}} \\cdot 2 \\cdot \\pi \\cdot R $$`;
+    resultadoCompleto.innerHTML += `$$ |E| = \\frac{1}{4 \\cdot \\pi \\cdot \\epsilon 0} \\cdot \\frac{${Z} \\cdot ${X}}{(${Z}^2 + ${R}^2)^\\frac{3}{2}} \\cdot 2 \\cdot \\pi \\cdot ${R} $$`;
+    resultadoCompleto.innerHTML += `$$ |E| = \\frac{1}{4 \\cdot \\pi \\cdot \\epsilon 0} \\cdot \\frac{${eq1_1}}{(${eq1_2})^\\frac{3}{2}} \\cdot ${eq1_3} \\cdot \\pi $$`;
+    resultadoCompleto.innerHTML += `$$ |E| \\approx \\frac{${eq2_2} \\cdot \\pi}{${round(eq2_3, 3)} \\cdot \\pi \\cdot \\epsilon 0} $$`;
+    resultadoCompleto.innerHTML += `$$ |E| \\approx ${round(E, 3)} ${notation} \\, \\left.\\mathrm{N}\\middle/\\mathrm{C}\\right. $$`;
+    resultadoResumido.innerHTML += `$$ |E| \\approx ${round(E, 3)} ${notation} \\, \\left.\\mathrm{N}\\middle/\\mathrm{C}\\right. $$`;
     resultadoResumido.innerHTML += `<div id="mostrarButton" class="buttons" onclick="mostrarCalculos()">Mostrar Cálculos</div>`
     MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 }
